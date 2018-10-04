@@ -1,0 +1,159 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subcaption}
+\usepackage{float}
+
+\title{C\`alcul Num\`eric}
+\author{Victor Mart\'in, Eric Valls, Dean Zhu}
+\date{October 2017}
+
+\begin{document}
+\maketitle
+\section*{Exercici 1}
+\subsection*{Plantejament del Problema}
+\quad Volem determinar l'angle amb que s'ha de disparar un projectil perquè, fixada la celeritat inicial, arriba a una dist\`ancia concreta. Aix\`o ens porta a plantejar un sistema de EDOs. \\
+
+Tenim la funci\'o \emph{f} a \emph{distancia.m}
+que, donat un angle i una velocitat inicial del tir (que està fixada al problema), resol el sistema i retorna la dist\`ancia horitzontal a la que arriba el projectil. \\
+
+Per trobar l'angle de llan\c{c}ament correcte volem trobar un angle ${\theta}$ tal que $f({\theta})$ sigui la dist\`ancia desitjada, en el nostre cas 500. Per resoldre aquest problema definim una funci\'o auxiliar $g(x) = f(x) - 500,$ on veiem que ${\theta}$ \'es soluci\'o de $f({\theta})$ = 500 si i només si  ${\theta}$  és un zero de la funci\'o g.\\
+
+Pels punts proposats:\\
+$\hspace*{1cm} f(0.25) = 451.263 m$\\
+$\hspace*{1cm} f(0.5) = 626.0806 m$\\
+$\hspace*{1cm} f(0.75) = 653.4704 m$\\
+$\hspace*{1cm} f(1) = 564.6122 m$
+\subsection*{Plantejament de la soluci\'o}
+\quad Considerem nom\'es les solucions amb $\theta  \in [0,\pi/2]$ \'es a dir, un angle del primer quadrant, doncs cap altre angle de tir t\'e sentit en aquest context.\\
+
+\subsection*{Plantejament de la soluci\'o}
+Veient els resultats anteriors i suposant que \emph{f} \'es cont\'inua, podem afirmar pel teorema de Bolzano-Weierstrass que en el interval $[0.25,0.5]$ existeix com a m\'inim una soluci\'o.
+A m\'es a m\'es sabem que un tir de angle $\pi/2$ arribara a una dist\`ancia propera al 0, llavors afirmarem que existeix una altra soluci\'o en l'interval $[1,\pi/2]$. De moment amb aquesta informaci\'o no podem afirmar sobre l'exist\`encia d'altres solucions.
+
+Per comprovar que nom\'es existeixen dues solucions, avaluarem la funció en l'interval $[0,\pi/2]$ per tenir una idea de la gr\`afica de la funci\'o. \\
+
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{Grafica1.jpg}
+  \caption{Avaluaci\'o de \emph{f} en l'interval $[0,\pi/2]$}
+  \label{fig:grafica1}
+\end{figure}
+
+Per solucionar aquest problema tenim diversos m\`etodes: bisecci\'o, Newton, secant i m\`etodes h\'ibrids.
+
+\subsection*{M\'etode de Bisecci\'o}
+\quad Aquest m\'etode t\'e una clara avantatge, sabem que convergir\`a. A més a m\'es és més f\`acil de programar que un m\`etode h\'ibrid. No obstant, la seva convergència és linial, essent massa lenta en molts casos. En el nostre cas, prenent $x_{0},x_{1}$ com a 0.2 i 0.6 la funci\'o fa 19 iteracions, amb un error relatiu de $10^{-6}$ en el punt 0.2986618, prenent  $x_{0},x_{1}$ com a 1 i 1.2 convergeix amb 18 iteracions al punt 1.0991440.  
+
+
+\subsection*{M\'etode de Newton}
+\quad Comparat amb el m\`etode de bisecci\'o, el mètode de Newton convergir\`a bastant m\'es r\`apid en general. A més a més, donada la forma de la funci\'o \emph{g}, sembla ser bastant bona com per qu\`e despr\`es de cada iteraci\'o ens apropem a la soluci\'o desitjada. Per\'o aquest m\`etode t\'e un problema, que es que no coneixem la funci\'o derivada. Per tant el que farem ser\`a aproximar la derivada.
+
+\subsubsection*{Aproximaci\'o de la derivada}
+\quad La definici\'o de derivada \'es:
+	 $$\lim_{t\to0} \frac{f(x+t) - f(x)}{t}$$ \\
+Llavors per poder aproximar la derivada nom\'es cal pendre un $\epsilon$ prou petit tal que $$g'(\theta) \simeq \frac{g(\theta+\epsilon) - g(\theta)}{\epsilon}$$
+
+Prenent $\epsilon = 10^{-7}$,l'error relatiu $10^{-6}$ i punt inicial 0.2, el m\`etode convergeix en 5 iteracions en el punt 0.2986615, i prenent el punt inicual 1.2 convergeix en 4 iteracions en el punt 1.0991443.
+
+\subsection*{M\'etode de la Secant}
+\quad Donat el problema del m\`etode de Newton la secant sembla ser la soluci\'o m\'es raonable per aquest problema.\\
+
+\quad Observant la gr\`afica i els punts avaluat al apartat A, prenem els punts 0.2 i 0.6 i en aquest cas el m\`etode convergeix en 7 iteracions en el punt 0.2986615 amb un error relatiu de $10^{-6}$. I prenem els punts 1, 1.2 el m\'etode convergeix en 5 iteracions en el punt 1.0991443 i el mateix error relatiu que el cas anterior.
+
+\newpage
+
+\section*{Exercici 2}
+\quad Donat un sistema de quatre barres connectats pels extrems formant un quadrilàter, amb una barra fixada sobre l'eix X, volem conèixer quin angle $\alpha$ formen, si numerem les barres de l'1 al 4 en ordre, amb la barra 1 fixa a l'eix X, les barres 1 i 2, tot coneixent el complementari $\beta$ de l'angle que formen les barres 1 i 4.
+
+L'equació de Freudenstein $\frac{a_1}{a_2} \cos\beta - \frac{a_1}{a_2} \cos\alpha-\cos(\beta-\alpha) = -\frac{a_1^2+a_2^2-a_3^2+a_4^2}{2a_2 2a_4}$ ens relaciona $\alpha$ amb $\beta$, tot i que no garanteix que hi hagi solució real de $\alpha$, ni que sigui única, ni que la solució impliqui que el quadrilàter que formen les barres no tingui autointerseccions i no sigui degenerat.
+
+Per tant, fixat el valor de $\beta$, Considerem la funció $f(x) = \frac{a_1}{a_2} \cos\beta - \frac{a_1}{a_2} \cos x - \cos(\beta-x) + \frac{a_1^2+a_2^2-a_3^2+a_4^2}{2a_2 2a_4}$. Tenim també $f'(x) = \frac{a_1}{a_2} \sin x - \sin(\beta-x)$.
+
+Qualsevol configuració possible complirà $f(x) = 0$. Volem resoldre el problema mitjançant el mètode de Newton considerant les configuracions inicials $\beta = -0.1$ i $\beta = 2\pi/3$. A partir de les logituds, en centímetres, $a_1, a_2, a_3, a_4$ de les barres, $\beta$ i un real $x$, les funcions $\verb|P2avalua(x, a1, a2, a3, a4, beta)|$ i $\verb|P2derivada(x, a1, a4, beta)|$ ens donen, respectivament, els valors $f(x)$ i $f'(x)$. La funció $\verb|P2newton(x0, a1, a2, a3, a4, beta, tol)|$, ens dona un valor un valor de $\alpha$ amb el mètode de Newton a partir de l'aproximació inicial $x_0$, i $\verb|P2(x0, a1, a2, a3, a4, beta, tol)|$ ens dibuixa la configuració obtinguda a partir d'aquest mètode. Les funcions estan situades als arxius amb el mateix nom i extensió .m.
+
+Les solucions obtingudes amb aproximacions $x^{0}_{1} = 2\pi/3 rad$ i $x^{0}_{2} = -0.1 rad$, amb precisió $tol = 10^{-15}$, són:
+
+$\alpha_1 = 1.70969012749560 \hspace{4pt}rad = 97.9580285806814 \deg$
+
+$\alpha_2 = 0.38470497489760 \hspace{4pt}rad = 22.0419714193186 \deg$
+
+Les configuracions obtingudes, respectivament, són les següents:
+
+
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}[H]{0.49\linewidth}
+    \includegraphics[width=\linewidth]{Configuracio1.png}
+    \caption{Configuaraci\'o de les barres amb\\ $x^{0}_{1} = 2\pi/3 rad$}
+  \end{subfigure}
+  \begin{subfigure}[H]{0.49\linewidth}
+    \includegraphics[width=\linewidth]{Configuracio2.png}
+    \caption{Configuaraci\'o de les barres amb\\ $x^{0}_{2} = -0.1 rad$}
+  \end{subfigure}
+  \label{fig:Configuracions}
+\end{figure}
+
+
+
+\newpage
+
+\section*{Exercici 3}
+\subsection*{Plantejament del Problema}
+\quad Donada una malla, i una funci\'o objectiu en varies variables que l'anomanem distorsi\'o, volem trobar un m\'inim d'aquesta funci\'o.\\
+\quad Inicialment, la distorsi\'o de la malla \'es 9.2269469.
+
+\subsection*{Plantejament del Soluci\'o}
+
+Com \'es un problema de minimitzaci'o volem trobar un punt tal que el Jacobi\`a valgui 0, llavors el problema \'es redueix en trobar un zero del jacobi\'a de la distorsi\'o. Per fer aix\'o utilitzarem el m\`etode de Newton el qual utilitzar\`a el Jacobi\`a i la Hessiana de la funci\'o objectiu.
+
+Utilitzant el m\'etode de Newton i prenent un error relatiu de $10^{-6}$ trobem una soluci\'o en 6 iteracions amb distorisi\'o 7.8946112.
+
+En canvi, utilitzant el m\'etode de Broyden i prenent el mateix error relatiu que el cas anterior, trobem la soluci\'o en X iteracions amb una distorisi\'o de Y. Tot i que el m\'etode de Broyden fa moltes m\'es iteracions que Newton, cada iteraci\'o es significativament m\'es r\`apida, doncs el c\`alcul de derivades t\'e un cost bastant alt.
+
+\newpage
+\section*{Exercici 4}
+\quad La regla de signes de Descartes diu que, donat un polinomi $p(x) = a_n x^n + a_{n-1} x^{n-1} + \ldots + a_1 x + a_0$,
+el nombre d'arrels reals positives de $p(x)$ és igual al nombre de parells $(a_k, a_{k-1})$ amb $k \in \{1, \ldots, n\}$ tals que $a_k$ i $a_{k-1}$ tinguin signes diferents, o és menor en un nombre parell. Anem a demostrar l'anàleg per a arrels reals negatives: El nombre d'arrels reals negatives d'un polinomi és igual al nombre de parells consecutius de coeficients amb igual signe o bé es menor que aquest en un nombre parell. Veiem-ho:
+
+Com que el nombre d'arrels reals negatives de $p(x)$ és el nombre d'arrels reals positives de $p(-x) = b_n x^n + b_{n-1} x^{n-1} + \ldots + b_1 x + b_0 = (-1)^n a_n x^n + (-1)^{n-1} a_{n-1} x^{n-1} + \ldots - a_1 x + a_0$, el màxim nombre d'arrels reals negatives de $p(x)$ serà el nombre de parells $(b_k, b_{k-1})$ tals que $b_k$ i $b_{k-1}$ tenen diferent signe, és a dir, el nombre de parells $(a_k, a_{k-1})$ tals que $a_k$ i $a_{k-1}$ tenen igual signe, o serà menor en un nombre parell.
+
+Considerem el polinomi $p(x) = x^6 - 2x^5 + 5x^4 - 6x^3 + 2x^2 + 8x - 8$. Aquest polinomi té 6 arrels complexes i 6 arrels diferents, per tant totes són simples. Per la regla de signes de Descartes, tenim que $p(x)$ té com a molt 5 arrels positives, i una de negativa. Només té 1 arrel positiva, $x = 1$ (menor en un nombre parell que 5) i una de negativa $x = -1$. Per tant, es verifica la regla de signes de Descartes en aquest polinomi, tant per a arrels reals positives, com per a negatives.
+
+Agafem ara el polinomi $p(x) = 9x^5 - 6x^4 - 17x^3 - 51x^2 + 40x - 7$. Utilitzarem el Teorema de Cauchy. Prenem $\eta = 	max_{0\leq\ k \leq n-1} {\left\vert\frac{a_k}{a_n}\right\vert} = \frac{51}{9} = \frac{17}{3}$. Per tant, $1 + \eta = \frac{20}{3}$, el cercle $\Gamma = \{z\in\mathbb C : \frac{20}{3}\}$ conté totes les arrels, i en particular, l'interval $\left[-\frac{20}{3}, \frac{20}{3}\right]$ en conté totes les reals.
+
+Usarem la funció $\verb|P4dibuixa(l,r)|$, que dibuixa la gràfica de $p(x)$ en l'interval $[l, r]$. De $P4(-20/3, 20/3)$, veiem que tots els zeros estan a l'interval $(-3,3)$.
+
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}[b]{0.49\linewidth}
+    \includegraphics[width=\linewidth]{XX1.png}
+    \caption{El polinomi avaluat en l'interval $[-20/3, 20/3]$}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\linewidth}
+    \includegraphics[width=\linewidth]{XX2.png}
+    \caption{El polinomi avaluat en l'interval $[-4.5, 4.5]$}
+  \end{subfigure}
+  \label{fig:Funcions}
+\end{figure}
+
+De $P4(-3, 3)$ veiem que els zeros estan a $(-0.5, 2.5)$ i de $P4(-0.5, 2.5)$, veiem que la funció té dos arrels diferents, una d'elles múltiple.\\\\
+
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}[b]{0.49\linewidth}
+    \includegraphics[width=\linewidth]{XX3.png}
+    \caption{El polinomi avaluat en l'interval $[-3, 3]$}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\linewidth}
+    \includegraphics[width=\linewidth]{XX4.png}
+    \caption{El polinomi avaluat en l'interval $[-0.5, 2.5]$}
+  \end{subfigure}
+  \label{fig:coffee}
+\end{figure}
+
+
+Aplicarem la funció $\verb|P4newton(x0, tol)|$ per a trobar les arrels mitjançant el mètode de Newton. Ens ajudarem de les funcions $\verb|P4avalua(x)|$ i $\verb|P4derivada(x)|$ que calculen $p(x)$ i $p'(x)$, respectivament. Amb aproximació $x_0 = 2.5$, veiem que $p(x)$ té una arrel a $x = 2.2582588834$. De la mateixa manera, amb $x_0 = 0$, trobem una arrel a $x = 0.3333321719$. Aquesta arrel no té les 10 xifres de precisió que volem ja que l'arrel és múltiple i la precisió de la màquina no es suficient per a aproximar-s'hi bé amb major posició a l'arrel, que és $x = 1/3$.
+\end{document}

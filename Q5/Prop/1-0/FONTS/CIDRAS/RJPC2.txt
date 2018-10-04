@@ -1,0 +1,54 @@
+Prova: Constructora buida
+No te candidat
+Prova: Constructora
+Dades per codi inicial
+Introdueix nForats
+Introdueix combinació
+El candidat es 111222333
+Prova: Avaluar candidat
+Introdueix quants candidats vols avaluar
+Dades per possibles candidats
+Introdueix una nova combinació
+El candidat es 444555666
+B es 0
+N es 0
+Dades per possibles candidats
+Introdueix una nova combinació
+El candidat es 441525663
+B es 0
+N es 3
+Dades per possibles candidats
+Introdueix una nova combinació
+El candidat es 434155266
+B es 3
+N es 0
+Dades per possibles candidats
+Introdueix una nova combinació
+El candidat es 190330220
+B es 4
+N es 1
+Dades per possibles candidats
+Introdueix una nova combinació
+El candidat es 111111111
+B es 0
+N es 3
+Dades per possibles candidats
+Introdueix una nova combinació
+El candidat es 111112222
+B es 2
+N es 4
+Dades per possibles candidats
+Introdueix una nova combinació
+El candidat es 222333111
+B es 9
+N es 0
+Dades per possibles candidats
+Introdueix una nova combinació
+El candidat es 123123123
+B es 6
+N es 3
+Dades per possibles candidats
+Introdueix una nova combinació
+El candidat es 111222333
+B es 0
+N es 9

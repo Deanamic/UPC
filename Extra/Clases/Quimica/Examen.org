@@ -1,0 +1,26 @@
+#+LATEX_HEADER: \usepackage[margin=3cm]{geometry}
+#+LATEX_HEADER: \usepackage{xfrac}
+#+TITLE: Examen Quimica
+#+OPTIONS: toc:nil
+* [2.5pt]
+En el laboratorio tenemos una disolución de alcohol etílico 96% en masa, queremos obtener una disolución de 500ml a 0.1 M. Calcula cuántos mililitros necesitamos de la disolución original, y cuantos mililitros de agua necesitaremos. \\
+Datos: densidad del alcohol etílico = \( 789kg/m^{3} \).
+
+* [2.5pt]
+Tenemos una sustancia S de una molaridad desconocida, pero sabemos que con 50ml de esta sustancia y enrasando con agua hasta los 380ml obtenemos la misma disolución a 0.3M. Cual es la molaridad de la sustancia inicial?
+
+* [3pt]
+Tenemos una disolución de ácido clorhídrico a 0.8 M. Para unos experimentos en el laboratorio necesitaremos esta disolución en distintas concentraciones. Nos piden cuantos mililitros de esta disolución necesitaremos para:
++ Tener una mezcla de 100ml a 0.2 M
++ Tener una mezcla de 150ml a 0.1 M
++ Tener una mezcla de 200ml a 1M
+Y justificar el procedimiento.
+
+* [2pt]
+Sabemos el magnesio reacciona con el nitrogeno.
+\[ M_{s} + N_{2(g)} \rightarrow Mg_{3}N_{(s)} \]
++ Iguala la ecuación
++ Cuantos gramos de nitruro de magnesio se formará si reaccionan 3,25g de magnesio
+
+* [0.5pt]
+Cuál es la condición para que la molalidad y la molaridad tengan el mismo valor en las unidades del sistema internacional?

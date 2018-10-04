@@ -1,0 +1,235 @@
+Prova: Constructora
+Ranquing amb la dificultat Facil
+Ranquing amb la dificultat Mitja
+Ranquing amb la dificultat Dificil
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Facil
+Atilano 10
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Facil
+Antia 9
+Atilano 10
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Facil
+Antia 9
+Atilano 10
+Breixo 11
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Dificil
+Amalia 1
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Dificil
+Amalia 1
+Breogan 1
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Mitja
+Cibran 3
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Mitja
+Cidre 2
+Cibran 3
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Facil
+Cosmede 8
+Antia 9
+Atilano 10
+Breixo 11
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Facil
+Crispin 7
+Cosmede 8
+Antia 9
+Atilano 10
+Breixo 11
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Facil
+Crispin 7
+Denis 7
+Cosmede 8
+Antia 9
+Atilano 10
+Breixo 11
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Facil
+Gundar 6
+Crispin 7
+Denis 7
+Cosmede 8
+Antia 9
+Atilano 10
+Breixo 11
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Facil
+Hadran 5
+Gundar 6
+Crispin 7
+Denis 7
+Cosmede 8
+Antia 9
+Atilano 10
+Breixo 11
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Facil
+Ite 4
+Hadran 5
+Gundar 6
+Crispin 7
+Denis 7
+Cosmede 8
+Antia 9
+Atilano 10
+Breixo 11
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Mitja
+Cidre 2
+Cibran 3
+Martiño 3
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Facil
+Ite 4
+Hadran 5
+Gundar 6
+Crispin 7
+Denis 7
+Cosmede 8
+Antia 9
+Atilano 10
+Breixo 11
+Mauro 12
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Facil
+Ite 4
+Hadran 5
+Gundar 6
+Crispin 7
+Denis 7
+Cosmede 8
+Antia 9
+Melquiades 9
+Atilano 10
+Breixo 11
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Facil
+Miro 2
+Ite 4
+Hadran 5
+Gundar 6
+Crispin 7
+Denis 7
+Cosmede 8
+Antia 9
+Melquiades 9
+Atilano 10
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Dificil
+Amalia 1
+Breogan 1
+Muriel 123
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+... Ya ira mejor Nicanor
+Ranquing amb la dificultat Facil
+Miro 2
+Ite 4
+Hadran 5
+Gundar 6
+Crispin 7
+Denis 7
+Cosmede 8
+Antia 9
+Melquiades 9
+Atilano 10
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Mitja
+Cidre 2
+Cibran 3
+Martiño 3
+Nicanor 100
+Introducir otro ganador? S/N
+Introducir nom
+Introducir torn
+Introducir dificultat
+Felicidades! Te has clasificado
+Ranquing amb la dificultat Dificil
+Amalia 1
+Breogan 1
+Nicanor 100
+Muriel 123
+Introducir otro ganador? S/N

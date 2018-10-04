@@ -1,0 +1,7 @@
+Aquest es el directori DOCS, conte els documents que no son ni fonts ni executables:
+
+casos-dus.dia: Diagrama de casos d'us.
+descripcio-casos-dus.odt: Despcripcio de cada cas d'us.
+diagrama-de-classes.dia: Diagrama estatic complet del model conceptual de dades.
+index.txt: Aquest index.
+

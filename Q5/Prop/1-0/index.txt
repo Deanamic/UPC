@@ -1,0 +1,8 @@
+Aquest es el directori arrel. Conte els seguents fitxers i directoris:
+
+descripcio.txt: Descripcio del grup, amb els noms i correus dels membres.
+DOCS: Directori que conte els documents que no son fonts ni executables.
+EXE: Directori que conte els executables.
+FONTS: Directori que conte les classes implementades.
+index.txt: Aquest index.
+

@@ -1,0 +1,4 @@
+Aquest es el directori que conte les classes implementades per Miguel Cidras Senra:
+
+index.txt: Aquest index.
+

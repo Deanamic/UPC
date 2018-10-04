@@ -1,0 +1,27 @@
+* Classes
+** Common Classes
+*** container
+    Fixed width container
+*** container-fluid
+    Browser sized container
+*** jumbotron
+    Used to create title sections
+
+* Grid
+There are 12 columns in bootstrap grids, and there are 4 diferent sizes. lg, md, sm, xs. This classes act on all larger sizes unless specified
+
+** Controlling Placement
+
+*** Offset (col-/sz/-offset-/num/)
+    Leaves a few common blank
+*** Pull (col-/sz/-pull-/num/)
+    Pull content to the beginning of the grid
+*** Push
+    Push content to the end of the column
+
+* Navbar
+  
+** Common classes
+*** navbar-brand
+*** dropdown, dropdown-menu
+

@@ -1,0 +1,24 @@
+Prova: Constructora buida
+No te candidat
+Prova: Constructora
+Dades per codi inicial
+Introdueix nForats
+Introdueix combinació
+El candidat es 11111
+Prova: Avaluar candidat
+Introdueix quants candidats vols avaluar
+Dades per possibles candidats
+Introdueix una nova combinació
+El candidat es 11111
+B es 0
+N es 5
+Dades per possibles candidats
+Introdueix una nova combinació
+El candidat es 23415
+B es 0
+N es 1
+Dades per possibles candidats
+Introdueix una nova combinació
+El candidat es 14152
+B es 0
+N es 2

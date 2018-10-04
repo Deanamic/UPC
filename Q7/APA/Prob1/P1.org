@@ -1,0 +1,46 @@
+#+LATEX_HEADER: \usepackage[margin=3cm]{geometry}
+#+LATEX_HEADER: \usepackage{xfrac}
+#+TITLE: Problema 6: Màxima versemblança 4
+#+NAME: Dean
+#+AUTHOR: Dean Zhu
+#+OPTIONS: toc:nil
+
+* Funció de log-versemblança
+Definim la funció de versemblança com: 
+\[ \mathcal{L}(p) = \prod_{i=1}^{n} p^{x_{i}}(1-p)^{1 - x_{i}} \]
+Ens fixem que si \(x_i = 1\) llavors \( P(x_{i} | p) = p \) i sino \( P(x_{i} | p) = 1 - p \)  \\
+I per tant: 
+\[ l(p) = ln(\mathcal{L}(p)) = \sum_{i=1}^{n} ln(p^{x_{i}}(1-p)^{1 - x_{i}}) = \]
+\[ = \sum_{i=1}^{n} x_{i}ln(p) + (1-x_{i})ln(1-p) \]
+
+* Estimador de màxima versemblança
+Llavors per trobar el estimador de màxima versemblança voldrem trobar un màxim de \(\mathcal{L}(p)\), 
+i per tant, un màxim de la Log-versemblança. Considerem la seva derivada i la igualem a 0:
+\[ \frac{dl}{dp} = 0 = \sum_{i=1}^{n} \frac{x_{i}}{p} - \sum_{i=1}^{n} \frac{1-x_{i}}{1-p}\]
+
+Multiplicant per \(p(1-p)\):
+\[\sum_{i=1}^{n} x_i - px_{i} = \sum_{i=1}^{n} p - px_{i} \]
+
+D'on obtenim:
+\[ \frac{\sum_{i=1}^{n} x_i}{n} = \tilde{p} \]
+
+Nomès queda veure que realment és un màxim, volem veure que la segona derivada és menor a 0:
+\[\frac{d^{2}l}{dp^2}(\tilde{p}) =   \sum_{i=1}^{n} \frac{-x_{i}}{\tilde{p}^{2}} + \sum_{i=1}^{n} \frac{x_{i} - 1}{(1-\tilde{p})^2}\]
+
+Donat que \(-x_{i}, x_{i} -1  \leq 0\), els dos termes són negatius o un és 0 i l'altre negatiu. Per tant es tracta d'un màxim.
+
+* Biaix i variança 
+El biaix d'aquest estimador és:
+\[ B(\tilde{p}) = E[\tilde{p}] - p = E\bigg[\frac{1}{n}\sum_{i=1}^{n} x_{i}\bigg] - p = \frac{1}{n} E\bigg[\sum_{i=1}^{n} x_{i}\bigg] - p = \frac{1}{n}(np) - p = 0 \]
+I per tant aquest estimador no té biaix. \\
+La variança és:
+\[ var(\tilde{p}) = var\bigg(\frac{1}{n}\sum_{i=1}^{n} x_i\bigg) = \frac{1}{n^{2}} var\bigg(\sum_{i=1}^{n} x_i\bigg) = \frac{1}{n^{2}} \sum_{i=1}^{n} var(x_{i})\]
+Finalment utilitzant que les variables són independents:
+\[ var(x_{i}) = p(1-p) \quad \forall i\]
+\[ var({\tilde{p}}) = \frac{1}{n^2}np(1-p) = \frac{p(1-p)}{n}\]
+
+Donat que quan n tendeix a \( \infty \) la variança és 0, podem afirmar que aquest estimador és consistent.
+
+* Estimació
+El nostre estimador indica que el valor de la \(\tilde{p}\) és simplement la mitjana aritmètica i per tant \( 
+\tilde{p} = 0.73 \)

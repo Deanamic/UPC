@@ -1,0 +1,35 @@
+Sequential execution
+
+Mandelbrot program
+center = (0, 0), size = 2
+maximum iterations = 10000
+
+Total execution time: 3.255221s
+STATIC
+
+Mandelbrot program
+center = (0, 0), size = 2
+maximum iterations = 10000
+
+Total execution time: 1.380878s
+STATIC,10
+
+Mandelbrot program
+center = (0, 0), size = 2
+maximum iterations = 10000
+
+Total execution time: 0.513774s
+DYNAMIC,10
+
+Mandelbrot program
+center = (0, 0), size = 2
+maximum iterations = 10000
+
+Total execution time: 0.457480s
+GUIDED,10
+
+Mandelbrot program
+center = (0, 0), size = 2
+maximum iterations = 10000
+
+Total execution time: 0.921969s

@@ -1,0 +1,4 @@
+param n = 800;
+param a = 2;
+param b = 2;
+param tol := 1e-8;

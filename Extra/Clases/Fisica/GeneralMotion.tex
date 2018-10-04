@@ -1,0 +1,168 @@
+% Created 2018-02-05 lun 11:56
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[margin=3cm]{geometry}
+\usepackage{xfrac}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\title{General Motion}
+\hypersetup{
+ pdftitle={General Motion},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.3.1 (Org mode 9.1.3)},
+ pdflang={English}}
+\begin{document}
+\rhead{Dean Zhu}
+\lhead{General Motion}
+
+\section{Problema}
+\label{sec:orga79bcb1}
+El objetivo de este tema es describir el movimiento de un objeto que no necesariamente es uniformemente acelerado. El caso mas común en la realidad.
+\section{Abstracci\'on}
+\label{sec:org946cc3e}
+La velocidad es fundamentalmente un cambio de posicion en un tiempo, la aceleracion por el otro lado es el cambio de velocidad en un tiempo. Si queremos aproximar la velocidad en el tiempo \(t_{0}\), podriamos coger: \\
+\[
+v = \frac{x_{1} - x_{0}}{t_{1} - t_{0}}, \hspace{4pt}
+a = \frac{v_{1} - v_{0}}{t_{1} - t_{0}}
+\]
+Esta aproximacion claramente no es suficientemente buena cuando la velocidad es muy irregular, pero a medida que cogemos t\(_{\text{1}}\) cercano a t\(_{\text{0}}\) mejora. Cuando cogemos un punto muy cercano, justamente obtenemos la \textbf{\textbf{\emph{derivada}}} de la función
+
+\subsection{Derivada}
+\label{sec:org14ed4d4}
+La derivada de \(x(t)\) respecto el tiempo, (escrita como \(x'(t)\) ó \(\frac{dx}{dt}\)) simplemente es una operación que nos indica el cambio de la función en un instante. Por tanto podemos definir:
+\[
+v(t) =  \frac{dx}{dt}
+\]
+Como hemos visto antes, la velocidad simplemente es el cambio de posición en el tiempo.
+Análogamente la aceleración es el cambio de posición en un instante y por tanto
+\[
+a(t) = \frac{dv}{dt} = \frac{d^{2}x}{dt^{2}}
+\]
+Si has podido seguir hasta este punto, ya deberías entender la relación entre \(x(t), v(t)\) y \(a(t)\)
+
+\subsubsection{Ejemplos}
+\label{sec:org76faad0}
+
+   La derivada de \(ax^{b}\) es simplemente multiplicar por el exponente y restarle uno \(\implies b \cdot ax^{b-1}\)
+   La derivada de una constante C es simplemente 0. \\
+   Para derivar un polinomio \(p(x) = 3x^{3} + 5x^{2} + 3x + 5\) Nos basta con derivar cada parte por separado, entonces
+   \[
+   \frac{dp}{dx} = 3 \cdot3x^{3-1} + 2 \cdot 5x^{2-1} + 1 \cdot 3x^{1-1} + 0 = 9x^{2} + 10x + 3
+   \]
+\subsection{Integral}
+\label{sec:orgab67526}
+Puede existir el problema inverso, conocemos la función de la velocidad \(v(t)\), pero no la de posición \(x(t)\). Sabemos por el apartado anterior que:
+\[
+v(t) =  \frac{dx}{dt}
+\]
+Necesitariamos una operación que desiciese la derivada, esa es justamente la Integral \(\int\). Obtendríamos por tanto:
+\[
+\int v(t) dt = x(t)
+\]
+Análogamente el caso anterior:
+\[
+\int a(t) dt = v(t)
+\]
+\[
+\iint a(t) dt^{2} = x(t)
+\]
+
+\subsubsection{Ejemplos}
+\label{sec:org84a3773}
+
+Como integrar es lo opuesto a derivar, haremos lo contrario a la derivada.
+Si los pasos para derivar un polinomio son multiplicar y restar 1 al exponente haremos lo contrario. sumaremos uno al exponente y divideremos.
+Por tanto la integral de \(ax^b\) es \(\frac{ax^{b+1}}{b+1}\) y la integral de una constante C es Cx.\\
+Pero nos tenemos que dar cuenta que si la derivada de una constante es 0, está desaparece de la ecuación por tanto siempre es posible que tenga una constante de más, por tanto a todas las integrales le sumaremos C. Esto se verá más claro en el ejemplo siguiente. \\
+Para integrar un polinomio \(q(x) = 9x^{2} + 10x + 3\), integramos cada parte por separado. Si realmente la integral deshace la derivada deberíamos obtener  \(p(x) = 3x^{3} + 5x^{2} + 3x + 5\)
+   \[
+   \int q dx  =  \int 9x^{2} + 10x + 3 dx = \frac{9x^{2+1}}{2+1} + \frac{10x^{1+1}}{1+1} + 3x = 3x^{3} + 5x^{2} + 3x
+   \]
+   Fijemonos que no obtenemos el polinomio original, ya que la derivada de 5 es 0 y desaparece. de hecho cualquier polinomio \(p_{c}(x) = 3x^{3} + 5x^{2} + 3x + C\), tiene derivada igual a q(x). Por tanto para diferenciarlas necesitamos sumar esa C.\\
+   Observamos que si sabemos el valor de p(x) es \(p_{x_1} \) en un punto \( x_1 \) cualquiera ya podemos encontrar la constante despejando la ecuaci\'on \( p(x_1) = 3x_1^{3} + 5x_1^{2} + 3x_1 + C =  p_{x_1} \).
+
+
+\subsection{Caso particular MRUA.}
+\label{sec:org1d9b70e}
+Si nos fijamos en el caso del MRUA, podemos coger la equación de posición y considerar sus derivadas
+
+\begin{alignat*}{6}
+                x(t)& = x_0& +& v_{0}t& +& \frac{1}{2}at^{2}& \\
+\frac{dx}{dt} = v(t)& =   0& +& v_{0}&  +& at& \\
+\frac{dv}{dt} = a(t)& =   0& +& 0&      +& a&
+\end{alignat*}
+Y obtenemos exactamente las tres ecuaciones del movimiento, Si integramos a partir de la ecuación de la aceleración obtenemos lo mismo:
+\begin{alignat*}{4}
+    a(t)& = a& \\
+    \int a(t) dt = v(t)& = at& +& C& \\
+    \int v(t) dt = x(t)& = \frac{1}{2}at^{2}& +& Ct& + D
+\end{alignat*}
+Vemos aquí otra vez la necesidad de sumar constante ya que sino no podemos obtener las ecuaciones originales.
+Para saber cual es la constante necesaria simplemente consideramos un punto de la función donde conozcamos el valor:
+\[
+v(0) = a\cdot(0) + C = v_{0} \implies C = v_{0}
+\]
+\[
+x(0) = \frac{1}{2}a(0)^{2} + v_{0}(0) + D = x_0 \implies x_0 = D
+\]
+Por tanto obtenemos las ecuaciones correctas.
+\[
+a(t) = a
+\]
+\[
+v(t) = v_{0} + at
+\]
+\[
+x(t) = x_{0} + v_{0}t + \frac{1}{2}at^{2}
+\]
+
+\subsection{Ejercicios}
+\label{sec:orgd3af187}
+
+\subsubsection{Derivada}
+\label{sec:orgcd97ab1}
+Sea un cuerpo del cual su posición viene descrita por la ecuación \(x(t) = t^3 + 2t + 1\), cuál es su ecuación de velocidad y de aceleración.
+Por los apartados anteriores sabemos que la velocidad es el cambio de posicion (su derivada) y la aceleración el cambio de velociad por tanto.
+\[
+v(t) = \frac{dx}{dt} = 3t^{2} + 2
+\]
+\[
+a(t) = \frac{dv}{dt} = 6t
+\]
+
+\subsubsection{Integral}
+\label{sec:orgd053362}
+    Sea un cuerpo del cual su aceleración viene descrita por la ecuación \(a(t) = 2t\), se conoce también que en el primer segundo va a 10m/s y se encuantra en la posición 5m. Cuál es su ecuación de posición y velocidad?
+    Otra vez por los apartados anteriores, sabemos que la aceleración es la derivada de la velocidad, para deshacer la derivada podemos integrar a ambos lados.
+\[
+v(t) = \int a(t) = \frac{2t^{1+1}}{2} + C = t^{2} + C
+\]
+Como \(v_{0} = 0^{2} + C = 10 \implies C = 10\)
+\[
+x(t) = \int v(t) = \frac{t^{3}}{3} + 10t + D
+\]
+Como \(x_{0} = D = 5\)
+por tanto las ecuaciones son:
+\[
+v(t) = t^{2} + 10
+\]
+\[
+x(t) = \frac{t^{3}}{3} + 10t + 5
+\]
+\end{document}

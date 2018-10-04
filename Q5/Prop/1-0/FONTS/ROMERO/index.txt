@@ -1,0 +1,4 @@
+Aquest es el directori que conte les classes implementades per Roger Romero Morral:
+
+index.txt: Aquest index.
+

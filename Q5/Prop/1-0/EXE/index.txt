@@ -1,0 +1,3 @@
+Aquest es el directori EXE, conte executables per provar les classes o funcionalitats implementades i jocs d'assaig. Cada executable es al subdirectori de la classe que prova.
+
+index.txt: Aquest index.

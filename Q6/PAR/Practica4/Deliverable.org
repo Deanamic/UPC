@@ -1,0 +1,6 @@
+* Deliverable 4
+
+** Introduction
+The aim of these deliverable is to describe the parallelism of the sorting task. We are going to use an implementation of the mergesort and the quick sort, where we divide our array into subsegments until the size is small enough and we perform a quicksort. With each sorted segment we can then efficiently merge them back.
+
+Our main objective is to observe the different performances of these process using different parallelization strategies, mainly leaf and tree parallelization.

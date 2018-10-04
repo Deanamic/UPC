@@ -1,0 +1,7 @@
+Aquest es el directori FONTS, conte les classes implementades (incloent-hi tests, stubs i drivers). Cada classe es al subdirectori de qui l'ha programada:
+
+CIDRAS: Directori amb les classes implementades per Miguel Cidras.
+index.txt: Aquest index.
+MASSACHS: Directori amb les classes implementades per Joan Massachs.
+ROMERO: Directori amb les classes implemenetades per Roger Romero.
+

@@ -1,0 +1,31 @@
+1)
+
+0000000000201054 B j
+000000000000076a T suma
+
+Solo sabemos la direccion de j porque es una variable global, i se encuentra en la memoria dinamica
+
+3) -static
+
+
+4)
+
+i = 10
+02642000-02666000 rw-p 00000000 00:00 0                                  [heap]
+7ffc551e4000-7ffc55205000 rw-p 00000000 00:00 0                          [stack]
+
+i = 40000
+01041000-01064000 rw-p 00000000 00:00 0                                  [heap]
+7ffdb30c6000-7ffdb30e7000 rw-p 00000000 00:00 0                          [stack]
+
+v2
+
+i = 10
+02642000-02666000 rw-p 00000000 00:00 0                                  [heap]
+7ffc551e4000-7ffc55205000 rw-p 00000000 00:00 0                          [stack]
+
+i = 40000
+00e5d000-00ea8000 rw-p 00000000 00:00 0                                  [heap]
+7fff9b923000-7fff9b944000 rw-p 00000000 00:00 0                          [stack]
+
+el espacio reservado en el primero es fijo mientras que en el segundo no.

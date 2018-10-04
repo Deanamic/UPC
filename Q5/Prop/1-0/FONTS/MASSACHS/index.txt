@@ -1,0 +1,4 @@
+Aquest es el directori que conte les classes implementades per Joan Massachs Guell:
+
+index.txt: Aquest index.
+

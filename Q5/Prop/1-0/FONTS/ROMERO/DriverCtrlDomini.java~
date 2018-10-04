@@ -1,0 +1,57 @@
+package ROMERO;
+
+import java.util.Scanner; 
+import ROMERO.CtrlDomini;
+
+public class DriverCtrlDomini {
+  private Scanner teclat;
+  
+  public CtrlDomini testConstructora() {
+	  CtrlDomini controlador = new CtrlDomini();
+	  return controlador;
+  }
+  
+  public void testGetRanquing(CtrlDomini controlador) {
+	  teclat = new Scanner(System.in);
+	  System.out.println("Introdueix la dificultat: ");
+	  String dificultat = teclat.nextLine();
+	  String[][] ranquing = controlador.getRanquing(dificultat);
+	  System.out.println("Ranquing de la dificultat " + dificultat);
+	  for (int i = 0; i < 10; ++i) {
+		System.out.println(ranquing[0][i] + " " + ranquing[1][i]);
+	  }
+  }
+  
+  public CtrlDomini testAfegeixNom(CtrlDomini controlador) {
+	  teclat = new Scanner(System.in);
+          System.out.println("Introdueix el nom: ");
+	  String nom = teclat.nextLine();
+	  System.out.println("Introdueix els torns: ");
+	  int torns = String.parseInt(teclat.nextLine());
+	  System.out.println("Introdueix la dificultat: ");
+	  String dificultat = teclat.nextLine();
+	  controlador.afegeixNom(nom,torns,dificultat);
+	  return controlador;
+  }
+  
+  public static void main(String[] args) {
+	  Scanner teclat2;
+	  teclat2 = new Scanner(System.in);
+	  
+	  System.out.println("Prova: Constructora");
+	  CtrlDomini controlador = new DriverCtrlDomini().testConstructora();
+	  
+	  while(true){
+		System.out.println("1: getRanquing, 2: afegeixNom");
+		int a = teclat2.nextInt();
+		
+		if (a == 1) {
+	  		System.out.println("Prova getRanquing: ");
+	  		new DriverCtrlDomini().testGetRanquing(controlador);
+		} else if (a == 2) {
+			System.out.println("Prova afegeixNom: ");
+			controlador = new DriverCtrlDomini().testAfegeixNom(controlador);
+		}
+	  }
+  }
+}

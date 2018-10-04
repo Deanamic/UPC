@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {1}Deliverable 5}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Gauss Seidel}{1}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Parallelization Strategy}{1}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Scalability}{2}{subsubsection.1.1.2}
+\contentsline {subsection}{\numberline {1.2}Optional}{2}{subsection.1.2}

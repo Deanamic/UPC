@@ -1,0 +1,36 @@
+#+OPTIONS: toc:nil
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usepackage[margin=2cm]{geometry}
+
+* Ejercicio 128
+Halla el area de regio limitada por la grafica de la funcion f(x) = $\sqrt{x}$, el eje Y (x = 0) y la recta y = 4 (la llamare g(x), por tanto g(x) = 4)
+
+** Grafica
+Para hacer la grafica necesitamos algun punto importante, 
+*** f(x) con eje Y:
+Como el eje Y es la recta vertical que pasa por el origen, sabemos que f(0) cortara con la recta. \\
+x_1 = $\sqrt{0}$ = 0
+*** f(x) con g(x):
+\[ f(x) = 4 \iff \sqrt{x} = 4 \iff \lvert x \rvert = 16 \implies x = \pm 16 \]
+Como hemos elevado al cuadrado, la solucion negativa no es possible (ademas $\sqrt{x}$ cuando x es negativo no existe) \\
+x_2 = 16
+*** eje Y con g(x):
+Es obvio que corta cuando x = 0.
+x_3 = x_1 = 0;
+
+\begin{tikzpicture}[xscale=0.5]
+\draw[->] (-1,0) -- (18,0) node[right] {$x$};
+\draw[->] (0,-1) -- (0,5) node[above] {$y$};
+\draw[blue, thick, domain=0:18, samples = 100] plot (\x, {sqrt(\x)}) node[right] {$f(x)$};;
+\draw[red, thick, domain=0:18] plot (\x, {4}) node[right] {$g(x)$};
+\draw[green, thick] (0,5) -- (0,0) node[below] {0}; ;
+\draw[orange, thin] (16,4) -- (16,0)node[below] {16};
+\end{tikzpicture}
+
+
+Entonces ahora queremos calcular el area encerrada por las tres funciones:
+** Resolucion
+\[ Area = \int_{0}^{16} g(x) - f(x)  \]
+Si nos fijamos, el area de g(x) es simplemente un rectangulo, de hecho Area es la diferencia entre el Area debajo g(x), que llamaremos A_1. Y el area debajo de f(x) que llamaremos A_2.\\
+Entonces:
+\[ Area = A_1 - A_2 = b*h - \int_{0}^{16} f(x) = 64 - \bigg[\frac{2*x^{\frac{3}{2}}}{3}\bigg]_{0}^{16} = 64 - \frac{2*16^{\frac{3}{2}}}{3} - 0 = 21.333\]

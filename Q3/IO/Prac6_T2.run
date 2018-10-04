@@ -1,0 +1,7 @@
+#reset;
+#model Prac6_T2.mod;
+#data Prac6_T2.dat;
+option minos_options "superbasics_limit= 1000";
+solve;
+#display x,y;
+printf {i in 0..n} '%f -%f\n',x[i], y[i];
