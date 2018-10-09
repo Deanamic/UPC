@@ -42,9 +42,9 @@ void MyGLWidget::paintGL ()
     pintaQuadrat();
 
     glViewport (width()/2, 0, width()/2, height()/2);
-    modelTransformR1();
+    modelTransformR1(true);
     pintaQuadrat ();
-    modelTransformR2();
+    modelTransformR2(true);
     pintaQuadrat();
     glBindVertexArray(0);
   }
@@ -61,23 +61,23 @@ void MyGLWidget::paintGL ()
   }
 }
 
-void MyGLWidget::modelTransformR1 ()
+void MyGLWidget::modelTransformR1 (bool rot = false)
 {
   // Codi per a la TG necessària per al rectangle R1
   // ...
   glm::mat4 TG(1.0);
 
-  TG = glm::rotate(TG, float(M_PI), glm::vec3(0.,0.,1.));
+  if(rot) TG = glm::rotate(TG, float(M_PI), glm::vec3(0.,0.,1.));
   TG = glm::translate(TG, glm::vec3(-0.5, 0.1, 0));
   TG = glm::scale(TG, glm::vec3(0.5, 2.5, 1));
   glUniformMatrix4fv (transLoc, 1, GL_FALSE, &TG[0][0]);
 }
 
-void MyGLWidget::modelTransformR2 ()
+void MyGLWidget::modelTransformR2 (bool rot = false)
 {
   glm::mat4 TG(1.0);
 
-  TG = glm::rotate(TG, float(M_PI), glm::vec3(0.,0.,1.));
+  if(rot) TG = glm::rotate(TG, float(M_PI), glm::vec3(0.,0.,1.));
   TG = glm::translate(TG, glm::vec3(-0.3, -0.5, 0));
   TG = glm::scale(TG, glm::vec3(0.6/0.4, 0.5, 1));
   glUniformMatrix4fv (transLoc, 1, GL_FALSE, &TG[0][0]);
