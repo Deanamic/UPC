@@ -1,0 +1,42 @@
+#+LATEX_HEADER: \usepackage[margin=3cm]{geometry}
+#+LATEX_HEADER: \usepackage{xfrac}
+#+TITLE: Problema 2: Convergència de K-means
+#+NAME: Dean
+#+AUTHOR: Dean Zhu
+#+OPTIONS: toc:nil
+
+Justificarem la convergència de l'Algorisme de K-means fixant-nos en la finitesa
+dels possibles estats.
+
+Siguin \( \Mathcal{D} = \{x_{1}, x_{2}, ... , x_{n} \} \) les dades a les que
+volem agrupar en /k/ clusters. Está clar que com a molt n'hi ha \(S(n,k)\)
+possibles formes de fer aquest partició, on \(S(n,k)\) son els nombres de
+Stirling de segona classe. A més sabem que si en algún pas del recàlcul de les
+\(\mu_c, c = \{1..k\}\) obtenim els mateixos valors que l'iteració anterior l'algorisme
+pararà. Llavors sabem que l'algorisme no convergeix si i només si trobem un
+conjunt d'estats que formen un cicle.
+
+
+Ara només cal provar que no pot existir aquest cicle d'estats, per veure això
+ens fixarem que la funció cost que mesura la qualitat del cluster es decreixent
+a mesura que actualitzem els nous centres del clusters a l'algorisme de K-means.
+I per tant si existís un cicle voldria dir que algun estat tindria major cost que l'anterior (per exemple l'estat de
+cost màxim dins del cicle), i entrariem en contradicció.
+Recordem que la funció de qualitat és: 
+\[
+J(r,\mu) = \sum_{i=1}^{n} \sum_{c=1}^{k} r_{ic} \| x_{i} - \mu_c \|^2 
+\]
+
+Considerem el pas d'actualitzar els \( r_{ic}, i = \{1..n\}, j = \{1..c\} \), les
+variables indicadores. Està clar que aquest pas disminuiex la funció de qualitat
+doncs el seu valor per definició minimitza el sumatori intern de /J/ i per tant
+minimitza la funció\(\implies J(r^{old},\mu) <= J(r^{new},\mu) \)
+
+Ara considerem el pas d'actualitzat el centre dels clusters \( \mu \), podem
+considerar la funció J escrita com:
+\[
+J(r,\mu) = \sum_{c=1}^{k} \sum_{i | r_{ic} = 1} \|x_{i} - \mu_c \|^2
+\]
+
+Donat que el domini és finit, no existeix una funció que decreix estrictament
+infinitament i per tant, no pot existir cap cicle i l'algorisme convergeix.
