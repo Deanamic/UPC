@@ -31,8 +31,8 @@ class MyGLWidget : public QOpenGLWidget, protected QOpenGLFunctions_3_3_Core
     void carregaShaders ();
     void pintaQuadrat ();
 
-    void modelTransformR1 ();
-    void modelTransformR2 ();
+    void modelTransformR1 (bool rot = false);
+    void modelTransformR2 (bool rot = false);
 
     // attribute locations
     GLuint vertexLoc, colorLoc, transLoc;

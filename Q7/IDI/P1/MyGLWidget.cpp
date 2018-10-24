@@ -61,7 +61,7 @@ void MyGLWidget::paintGL ()
   }
 }
 
-void MyGLWidget::modelTransformR1 (bool rot = false)
+void MyGLWidget::modelTransformR1 (bool rot)
 {
   // Codi per a la TG necessària per al rectangle R1
   // ...
@@ -73,7 +73,7 @@ void MyGLWidget::modelTransformR1 (bool rot = false)
   glUniformMatrix4fv (transLoc, 1, GL_FALSE, &TG[0][0]);
 }
 
-void MyGLWidget::modelTransformR2 (bool rot = false)
+void MyGLWidget::modelTransformR2 (bool rot)
 {
   glm::mat4 TG(1.0);
 
