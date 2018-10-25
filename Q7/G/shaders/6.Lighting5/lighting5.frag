@@ -1,6 +1,5 @@
 #version 330 core
 
-in vec4 frontColor;
 out vec4 fragColor;
 
 uniform vec4 lightAmbient; // similar a gl_LightSource[0].ambient
@@ -14,9 +13,9 @@ uniform vec4 matDiffuse; // similar a gl_FrontMaterial.diffuse
 uniform vec4 matSpecular;// similar a gl_FrontMaterial.specular
 uniform float matShininess;// similar a gl_FrontMaterial.shininess
 
-uniform bool world;
+uniform bool world = true;
 in vec3 NW, VW, LW;
-in vec3 NW, VW, LE;
+in vec3 NE, VE, LE;
 
 vec4 light(vec3 N, vec3 V, vec3 L) {
   N=normalize(N); V=normalize(V); L=normalize(L);
