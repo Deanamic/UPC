@@ -1,0 +1,34 @@
+#+LATEX_HEADER: \usepackage[margin=3cm]{geometry}
+#+LATEX_HEADER: \usepackage{xfrac}
+#+TITLE: Problema 11
+#+AUTHOR: Dean Zhu
+#+NAME: Dean
+#+OPTIONS: toc:nil
+
+Considerem un problema de classificació en dues classes, en les quals es
+disposa de les probabilitats de cada classe \(P(\omega_{1})\) i \(P(
+\omega_{2})\). Considerem tres possibles regles per classificar un objecte:
+
+1. (R1) Predir la classe més probable
+2. (R2) Predir la classe \( \omega_{1} \) amb probabilitat \(P(\omega_{1})\)
+3. (R3) Predir la classe \( \omega_{1} \) amb probabilitat \(P(0.5)\)
+
+Es demana:
+
+
+1. Donar les probabilitats d'error P_i(error) de les tres regles, i = 1,2,3
+2. Demostrar que \( P_1(error) \leq P_2(error) \leq P_3(error) \)
+
+\hline
+
+1. La probabilitat d'error de qualsevol de les tres regles és: 
+\[
+P_{i}(error) = P(choose(\omega_{1}) | R_{i}) * P(\omega_{2}) + P(choose(\omega_{2}) | R_{i}) * P(\omega_{1})
+\]
+Per les tres regles els valors obtinguts són:
+1. (R1) \( P_{1}(error) = P(choose(\omega_{1}) | R_{1}) * P(\omega_{2}) + P(choose(\omega_{2}) | R_{1}) * P(\omega_{1}) \) \\
+On 
+\[
+P(choose(\omega_{1}) | R_{1}) = \bigg\{ 1\text{ si }P(\omega_{1}) > P(\omega_{2}) \\
+2 \text{ altrament }
+\]
