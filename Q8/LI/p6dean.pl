@@ -111,17 +111,17 @@ pescalar([],[],0).
 
 interseccion([],_,[]).
 interseccion([X|L1],L2,[X|L3]):-
-	  pert(X,L2),!,
-	  interseccion(L1,L2,L3).
+    pert(X,L2),!,
+    interseccion(L1,L2,L3).
 interseccion([_|L1],L2,L3):-
-	  interseccion(L1,L2,L3).
+    interseccion(L1,L2,L3).
 
 union([],L,L).
 union([X|L1],L2,L3):-
-	  pert(X,L2),!,
-	  union(L1,L2,L3).
+    pert(X,L2),!,
+    union(L1,L2,L3).
 union([X|L1],L2,[X|L3]):-
-	  union(L1,L2,L3).
+    union(L1,L2,L3).
 
 lastlist([X], X) :- !.
 lastlist([_|L], X) :- last(L, X).
@@ -176,3 +176,16 @@ card(L) :- natural(X), getpair(L,X,Y), write([X,Y]), nl.
 getpair([],_,0).
 getpair([X|L],X,Y) :- getpair(L,X,Z), Y is Z + 1.
 getpair([Z|L],X,Y) :- Z \= X, getpair(L,X,Y).
+
+esta_ordenada([]):-!.
+esta_ordenada([_]):-!.
+esta_ordenada([X,Y|L]) :- esta_ordenada([Y|L]), X =< Y.
+
+ordenacion(L1, L2) :- permutacion(L1,L2), esta_ordenada(L2).
+
+insert_sort([],[]).
+insert_sort([X|L], X1) :- insert_sort(L, X2), insert(X, X2, X1).
+
+insert(X,[],[X]).
+insert(X, [Y|L], [X,Y|L]):- X =< Y.
+insert(X, [Y|L], [Y|L1]) :- X > Y, insert(X,L,L1).

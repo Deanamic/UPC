@@ -1,0 +1,121 @@
+#+OPTIONS: toc:nil
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usepackage[margin=2cm]{geometry}
+
+* Antiderivatives
+
+** A remark about differentiation.
+
+Suppose we want to calculate the speed of change of a function /f(x)/. Let's draw
+a parallel to physics, we have a particle which is moving and we are given it's
+position as a function of time, that is, x(t). If we were to estimate it's speed
+/v/ at time \(t_{0}\), then we would simply measure for a few seconds and see how much
+its position has changed. So: \[ v(t_{0}) \approx \frac{\Delta x}{\Delta t} =
+\frac{x_{1} - x_{0}}{t_{1} - t_{0}} \]
+
+Now imagine if we wanted to give a more accurate measure at the instant, then
+obviously instead of measuring for a few seconds, measuring only one second
+would give us a better estimate, in fact, the shorter the period the more
+accurate will be our estimation. (As long as we can measure it's position
+accurately which is always a given in mathematics).
+
+If we right this down a little more formally we get that: 
+
+\begin{equation}
+v(t_0) =
+ \lim_{h\rightarrow 0} \frac{x(t_{0}+h) - x(t_0)}{(t_{0} + h) - t_{0}} = \lim_{h\rightarrow 0}
+ \frac{x(t_{0}+h) - x(t_0)}{h}
+\end{equation}
+
+And if we consider now our function of position simply as /f(x)/, we can see
+that the speed of it's change it's simply is derivative which we will right as
+\(\frac{dx}{dy}\). Note that /d/ stands for differential which
+simply is a infinitely small difference, hence \( \frac{dx}{dy} \) is simply a
+small change in /x/ divided by a small change in /y/, essentially the same as
+(1)
+
+** Introduction to antiderivatives.
+Now suppose that we have the inverse problem in our physics example, we are
+given the speed of some object and we are asked for it's postion. As we deduced
+above we know the relationship between the function of position and it's speed
+of change, which is the /derivative/, hence it is natural to think that if we
+had an operation which reversed this operation we would be able to solve the
+proposed problem.
+
+But as we know, the derivative of a constant function is 0, i.e. the speed of
+change of a constant function is 0. Hence if we are given: 
+\[ 
+f(x) = c, \quad f'(x) = 0 
+\] 
+
+It becomes virtually imposible to know which constant function gave
+as this derivative of value 0, so if there were an operation to reverse the
+derivative it would be up to a constant value, note that if we were given the
+value of f(x) at some point we would be able to determine the value of this
+constant. This exact operation is called the integral or antiderivative, we will
+call the integral of /f(x)/ a primitive.
+
+** Geometric Interpretation
+We know that we can understand the derivative as a tangent to the function at a
+certain point, we would also like to give an interpretation to the integral. 
+
+Let's go back to our example, we defined an estimation of speed as the change in
+position divided by the change in time, and we observed that the smaller the
+timeframe of our measurements the more accurate would this estimation be. Let's
+try and build the antiderivative in the same way.
+If we are given the function of speed and some time and were asked to calculate
+the position of the object relative to it's starting position, a very naive
+estimation would simply be:
+\[
+x \approx v(0)*t_{0} \text{ or } x \approx v(t)*t_{0}
+\]
+That is, we suppose that during all the period the object moved at the same
+speed as its initial one or it's final one. If we were asked to refine this estimation we could
+for instance divide the period in two halves and say that: \[
+x \approx v(0)\cdot\frac{t_{0}}{2} + v(\frac{t_{0}}{2})\cdot\frac{t_{0}}{2}
+\]
+We assume that at the first half it moved at the same speed as the initial one,
+and at the latter half it moved at the same speed as its velocity at time
+\(\frac{t_{0}}{2}\).
+If we were to do this process n times we would obtain the following estimation:
+\begin{equation}
+x \approx \sum_{i = 0}^{n} v\bigg(i\cdot\frac{t_{0}}{n}\bigg) \bigg((i+1)\cdot\frac{t_{0}}{n} - i
+\frac{t_{0}}{n}\bigg) = \sum_{i = 0}^{n} v\bigg(i\cdot\frac{t_{0}}{n}\bigg)\cdot\bigg(\frac{t_{0}}{n}\bigg)
+\end{equation}
+We divide the time in /n/ equal segments and the i-th segment starts at
+\(i\cdot\frac{t_{0}}{n}\) and ends at \((i+1)\cdot\frac{t_{0}}{n}\)
+Now if we were asked to give a more precise answer we could do the same as we
+did with the derivative and assert that:
+\begin{equation}
+x = \lim_{n\rightarrow \infty} \sum_{i = 0}^{n} v\bigg(i\cdot\frac{t_{0}}{n}\bigg)\cdot\bigg(\frac{t_{0}}{n}\bigg)
+\end{equation}
+Note that \( \frac{t_{0}}{n} \) becomes infinitely small, in essence it becomes
+a time differential hence we can write:
+\begin{equation}
+x = \lim_{n\rightarrow \infty} \sum_{i = 0}^{n} v(i \cdot dt)dt
+\end{equation}
+That is, the integral is simply an infinite sum of the function multiplied by a
+differential and thus:
+
+\begin{equation}
+x = \lim_{n\rightarrow \infty} \sum_{i = 0}^{n} v(i \cdot dt)dt = \int_{0}^{t_{0}} v(t) dt
+\end{equation}
+
+Now lets give this a geometrical meaning, consider the graph obtained by
+plotting /v(t)/, the first estimation simply consideted a \(v(0) \times t_{0} \)
+rectangle as an estimation for /x/. The second one considered two rectangles of
+base \(\frac{t_{0}}{2}\) and height \( v(0) \text{ and } v(\frac{t_0}{2}) \)
+respectively. 
+
+Now if we go to expression (2), we are expressing /x/ as the sum of /n/
+rectangles of base \(\frac{t_0}{n}\) and the height of the i-th rectangle being
+\(v(i\cdot\frac{t_{0}}{n})\).
+
+If we now look at the expression (5), we can see that the real value of the
+integral is simply the sum of infinitely many rectangles of a base of length
+\(dt\) (recall that /dt/ is simply a small change in t) and its height being our
+function /v(t)/ evaluated at the start of each interval. That is, the integral
+is simply approximating the area under the curve of our function using an
+infinite number of rectangles, this specific approximation is known as the
+*Riemman Sum*.
+

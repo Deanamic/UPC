@@ -4,7 +4,8 @@
 #+OPTIONS: toc:nil
 
 * Problema
-El objetivo de este tema es describir el movimiento de un objeto que no necesariamente es uniformemente acelerado. El caso mas común en la realidad.
+El objetivo de este tema es describir el movimiento de un objeto que no
+necesariamente es uniformemente acelerado. El caso mas común en la realidad.
 *  Abstraccion
 La velocidad por definición nos dice cuántos metros recorremos en un cierto tiempo, i.e. Un cambio de posicion respecto a un cambio de tiempo. Por tanto si tenemos un objeto que se mueve en MRU la velocidad es simplemente \( \frac{x_{1} - x_{0}}{t_{1} - t_{0}} \), en cambio cuando la función que describe el movimiento se complica es mucho más dificil describir la velocidad, ya que va variando según el tramo. En MRUA la velocidad pasa a ser \( v(t) = v_{0} + at \) una función que depende del tiempo.
 
