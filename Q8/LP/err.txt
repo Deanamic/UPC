@@ -1,0 +1,12 @@
+PracticaEricDean.c:14:10: fatal error: pcctscfg.h: No such file or directory
+ #include "pcctscfg.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+scan.c:13:10: fatal error: pcctscfg.h: No such file or directory
+ #include "pcctscfg.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+err.c:14:10: fatal error: pcctscfg.h: No such file or directory
+ #include "pcctscfg.h"
+          ^~~~~~~~~~~~
+compilation terminated.
