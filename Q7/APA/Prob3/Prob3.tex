@@ -1,0 +1,70 @@
+% Created 2018-11-19 Mon 23:32
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[margin=3cm]{geometry}
+\usepackage{xfrac}
+\author{Dean Zhu}
+\date{\today}
+\title{Problema 11}
+\hypersetup{
+ pdfauthor={Dean Zhu},
+ pdftitle={Problema 11},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.1 (Org mode 9.1.14)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+Considerem un problema de classificació en dues classes, en les quals es
+disposa de les probabilitats de cada classe \(P(\omega_{1})\) i \(P(
+\omega_{2})\). Considerem tres possibles regles per classificar un objecte:
+
+\begin{enumerate}
+\item (R1) Predir la classe més probable
+\item (R2) Predir la classe \(\omega_{1}\) amb probabilitat \(P(\omega_{1})\)
+\item (R3) Predir la classe \(\omega_{1}\) amb probabilitat \(P(0.5)\)
+\end{enumerate}
+
+Es demana:
+
+
+\begin{enumerate}
+\item Donar les probabilitats d'error P\(_{\text{i}}\)(error) de les tres regles, i = 1,2,3
+\item Demostrar que \(P_1(error) \leq P_2(error) \leq P_3(error)\)
+\end{enumerate}
+
+\hline
+
+\begin{enumerate}
+\item La probabilitat d'error de qualsevol de les tres regles és:
+\end{enumerate}
+\[
+P_{i}(error) = P(choose(\omega_{1}) | R_{i}) * P(\omega_{2}) + P(choose(\omega_{2}) | R_{i}) * P(\omega_{1})
+\]
+Per les tres regles els valors obtinguts són:
+\begin{enumerate}
+\item (R1) \(P_{1}(error) = P(choose(\omega_{1}) | R_{1}) * P(\omega_{2}) + P(choose(\omega_{2}) | R_{1}) * P(\omega_{1})\) \\
+\[
+P(choose(\(\omega_{\text{1}}\)) | R\(_{\text{1}}\)) = \bigg\{ 
+\begin{array}{ll}
+1 &\text{ si } P(\omega_{1}) > P(\omega_{2}) \\
+2 &\text{ altrament }
+\end{array}
+\]
+
+\end{enumerate}
+\end{document}

@@ -29,6 +29,9 @@ Per les tres regles els valors obtinguts són:
 1. (R1) \( P_{1}(error) = P(choose(\omega_{1}) | R_{1}) * P(\omega_{2}) + P(choose(\omega_{2}) | R_{1}) * P(\omega_{1}) \) \\
 On 
 \[
-P(choose(\omega_{1}) | R_{1}) = \bigg\{ 1\text{ si }P(\omega_{1}) > P(\omega_{2}) \\
-2 \text{ altrament }
+P(choose(\omega_{1}) | R_{1}) = \bigg\{ 
+\begin{array}{ll}
+1 &\text{ si } P(\omega_{1}) > P(\omega_{2}) \\
+2 &\text{ altrament }
+\end{array}
 \]
