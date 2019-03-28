@@ -63,14 +63,80 @@ consecutiveDays(D1,D2,D3):- numDays(N), N1 is N-2, between(1,N1,D1), D2 is D1+1,
 city(C):-                   cities(L),member(C,L).
 bus(B):-                    numBuses(N), between(1,N,B).
 trip(C1-C2):-               cities(L), member(C1,L), member(C2,L), C1 \= C2.
-
+tooLong(C1, C2, C3) :- trip(C1-C2), trip(C2-C3), dist(C1,C2,D1), dist(C2,C3,D2), maxDist(Max), D1 + D2 > Max.
 %%%%%%  SAT Variables:
-
+satVariable( bdc(B, D, C) ) :- bus(B), day(D), city(C).
+satVariable( bddcc(B, D1, D2, C1, C2)) :- bus(B), day(D1), consecutiveDays(D1,D2), city(C1), city(C2), C1 \= C2.
 
 writeClauses:-
+    tripClauses,
+    busOneCity,
+    busMove,
+    cityBus,
+    tripGraphComplete,
+    busMaxFuel,
     true,!.                    % this way you can comment out ANY previous line of writeClauses
 writeClauses:- told, nl, write('writeClauses failed!'), nl,nl, halt.
 
+tripClauses :-
+    city(C1),
+    city(C2),
+    C1 \= C2,
+    day(D1),
+    consecutiveDays(D1,D2),
+    bus(B),
+    writeClause([bdc(B,D1,C1), bdc(B,D2,C2), -bddcc(B, D1, D2, C1, C2)]),
+    writeClause([bdc(B,D1,C1), -bdc(B,D2,C2), -bddcc(B, D1, D2, C1, C2)]),
+    writeClause([-bdc(B,D1,C1), bdc(B,D2,C2), -bddcc(B, D1, D2, C1, C2)]),
+    writeClause([-bdc(B,D1,C1), -bdc(B,D2,C2), bddcc(B, D1, D2, C1, C2)]),
+    fail.
+tripClauses.
+
+busOneCity :-
+    bus(B),
+    day(D),
+    findall(bdc(B, D, C), city(C), Lits),
+    exactly(1, Lits),
+    fail.
+busOneCity.
+
+busMove  :-
+    bus(B),
+    city(C1),
+    day(D1),
+    consecutiveDays(D1,D2),
+    writeClause([-bdc(B, D1, C1), -bdc(B, D2, C1)]),
+    fail.
+busMove.
+
+cityBus :-
+    city(C),
+    day(D),
+    findall(bdc(B, D, C), bus(B), Lits),
+    exactly(1, Lits),
+    fail.
+cityBus.
+
+tripGraphComplete :-
+    city(C1),
+    city(C2),
+    C1 \= C2,
+    findall(bddcc(B, D1, D2, C1, C2), (bus(B), day(D1), consecutiveDays(D1,D2)), Lits),
+    atLeast(1, Lits),
+    fail.
+tripGraphComplete.
+
+busMaxFuel :-
+    bus(B),
+    city(C1),
+    trip(C1-C2),
+    trip(C2-C3),
+    tooLong(C1, C2, C3),
+    day(D1),
+    consecutiveDays(D1,D2,D3),
+    writeClause([-bddcc(B,D1,D2,C1,C2), -bddcc(B,D2,D3,C2,C3)]),
+    fail.
+busMaxFuel.
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %%%%%% show the solution. Here M contains the literals that are true in the model:
@@ -192,3 +258,4 @@ readWord(-1,_):-!, fail. %end of file
 readWord(C,[]):- member(C,[10,32]), !. % newline or white space marks end of word
 readWord(Char,[Char|W]):- get_code(Char1), readWord(Char1,W), !.
 %========================================================================================
+%
